@@ -7,5 +7,5 @@ Thymeleaf Tutorial(https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.ht
 It's way too old to use in my project.
 So, I made a new one using spring boot 2.7.1.
 
-But, I used the old Repositories.
+But, I used the previous Repositories.
 Now, I'm trying to change the JPA Repositories.

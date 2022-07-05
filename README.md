@@ -8,4 +8,6 @@ It's way too old to use in my project.
 So, I made a new one using spring boot 2.7.1.
 
 But, I used the previous Repositories.
+I changed Repositories to Mybatis annotation.
+
 Now, I'm trying to change the JPA Repositories.

@@ -23,16 +23,15 @@ package org.datastreams.thymeleafgtvg.business.entities;
 public class Comment {
 
     private Integer id = null;
-    private String text = null;
-    
-    
+    private String commentText = null;
+
     public Comment() {
         super();
     }
 
     public Comment(final Integer id, final String text) {
         this.id = id;
-        this.text = text;
+        this.commentText = text;
     }
 
     public Integer getId() {
@@ -42,12 +41,11 @@ public class Comment {
         this.id = id;
     }
 
-
     public String getText() {
-        return this.text;
+        return this.commentText;
     }
     public void setText(final String text) {
-        this.text = text;
+        this.commentText = text;
     }
     
 }

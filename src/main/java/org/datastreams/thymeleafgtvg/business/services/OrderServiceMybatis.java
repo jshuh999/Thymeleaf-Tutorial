@@ -2,40 +2,42 @@ package org.datastreams.thymeleafgtvg.business.services;
 
 import org.datastreams.thymeleafgtvg.business.entities.Order;
 import org.datastreams.thymeleafgtvg.business.entities.OrderLine;
-import org.datastreams.thymeleafgtvg.business.repositories.OrderRepository;
+import org.datastreams.thymeleafgtvg.business.mapper.CustomerMapper;
+import org.datastreams.thymeleafgtvg.business.mapper.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class OrderServiceImpl implements OrderService{
+@Primary
+public class OrderServiceMybatis implements OrderService{
 
   @Autowired
-  private final OrderRepository orderRepository;
+  private final OrderMapper orderMapper;
 
-  public OrderServiceImpl(OrderRepository orderRepository) {
-    this.orderRepository = orderRepository;
+  public OrderServiceMybatis(OrderMapper orderMapper) {
+    this.orderMapper = orderMapper;
   }
 
   @Override
   public List<Order> findAll() {
-    return orderRepository.findAll();
+    return orderMapper.findAll();
   }
 
   @Override
   public Order findById(Integer id) {
-    return orderRepository.findById(id);
+    return orderMapper.findById(id);
   }
 
   @Override
   public List<Order> findByCustomerId(Integer customerId) {
-    return orderRepository.findByCustomerId(customerId);
+    return orderMapper.findByCustomerId(customerId);
   }
 
   @Override
   public List<OrderLine> findByOrderId(Integer orderId) {
-    return null;
+    return orderMapper.findByOrderId(orderId);
   }
 }

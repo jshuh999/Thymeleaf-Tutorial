@@ -13,7 +13,7 @@ public class Orders {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private Calendar date;
+  private Calendar orderDate;
   @ManyToOne
   @JoinColumn(name = "customer_id")
   private Customer customer;

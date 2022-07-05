@@ -27,8 +27,7 @@ public class User {
     private String nationality = null;
     private Integer age = null;
     
-    
-    public User(final String firstName, final String lastName, 
+    public User(final String firstName, final String lastName,
             final String nationality, final Integer age) {
         super();
         this.firstName = firstName;
@@ -36,7 +35,6 @@ public class User {
         this.nationality = nationality;
         this.age = age;
     }
-
 
     public String getFirstName() {
         return this.firstName;

@@ -76,7 +76,7 @@ public class OrderRepository {
         final Order order1 = new Order();
         order1.setId(Integer.valueOf(1));
         order1.setCustomer(cust4);
-        order1.setDate(CalendarUtil.calendarFor(2009, 1, 12, 10, 23));
+//        order1.setDate(CalendarUtil.calendarFor(2009, 1, 12, 10, 23));
         this.ordersById.put(order1.getId(), order1);
         this.ordersByCustomerId.get(cust4.getId()).add(order1);
 
@@ -102,7 +102,7 @@ public class OrderRepository {
         final Order order2 = new Order();
         order2.setId(Integer.valueOf(2));
         order2.setCustomer(cust6);
-        order2.setDate(CalendarUtil.calendarFor(2010, 6, 9, 21, 01));
+//        order2.setDate(CalendarUtil.calendarFor(2010, 6, 9, 21, 01));
         this.ordersById.put(order2.getId(), order2);
         this.ordersByCustomerId.get(cust6.getId()).add(order2);
 
@@ -123,7 +123,7 @@ public class OrderRepository {
         final Order order3 = new Order();
         order3.setId(Integer.valueOf(3));
         order3.setCustomer(cust1);
-        order3.setDate(CalendarUtil.calendarFor(2010, 7, 18, 22, 32));
+//        order3.setDate(CalendarUtil.calendarFor(2010, 7, 18, 22, 32));
         this.ordersById.put(order3.getId(), order3);
         this.ordersByCustomerId.get(cust4.getId()).add(order3);
 

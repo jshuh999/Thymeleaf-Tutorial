@@ -3,6 +3,7 @@ package org.datastreams.thymeleafgtvg.web.controller;
 import org.datastreams.thymeleafgtvg.business.entities.Order;
 import org.datastreams.thymeleafgtvg.business.entities.Product;
 import org.datastreams.thymeleafgtvg.business.entities.User;
+import org.datastreams.thymeleafgtvg.business.mapper.UserMapper;
 import org.datastreams.thymeleafgtvg.business.services.OrderService;
 import org.datastreams.thymeleafgtvg.business.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class MainController {
@@ -26,19 +26,21 @@ public class MainController {
   @Autowired
   private ProductService productService;
 
+  @Autowired
+  private UserMapper userMapper;
+
   @GetMapping("/")
   public String home(HttpServletRequest request, Model model) {
     HttpSession session = request.getSession();
-    User loginUser = new User("jinseok","heo","korea",44);
+    User loginUser = userMapper.findById(1);
     session.setAttribute("user", loginUser);
     model.addAttribute("today", Calendar.getInstance());
     return "home";
   }
 
-
   @GetMapping("order/details")
   public String orderDetails(@RequestParam("orderId") Integer orderId, Model model) {
-    Order order = orderService.findById(orderId);
+    Order order= orderService.findById(orderId);
     model.addAttribute("order", order);
     return "order/details";
   }
@@ -72,7 +74,6 @@ public class MainController {
   @GetMapping("/product/comments")
   public String  productComments(@RequestParam("prodId") Integer prodId, Model model) {
     Product product = productService.findById(prodId);
-
     model.addAttribute("prod", product);
     return "product/comments";
   }

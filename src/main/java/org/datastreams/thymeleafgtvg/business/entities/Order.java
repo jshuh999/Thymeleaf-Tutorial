@@ -19,14 +19,16 @@
  */
 package org.datastreams.thymeleafgtvg.business.entities;
 
+import javax.persistence.Table;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Table(name = "orders")
 public class Order {
-
     private Integer id = null;
-    private Calendar date = null;
+    private Date orderDate = null;
     private Customer customer = null;
     private Set<OrderLine> orderLines = new LinkedHashSet<OrderLine>();
     
@@ -34,7 +36,6 @@ public class Order {
         super();
     }
 
-    
     public Integer getId() {
         return this.id;
     }
@@ -42,15 +43,13 @@ public class Order {
         this.id = id;
     }
     
-
-    public Calendar getDate() {
-        return this.date;
+    public Date getDate() {
+        return this.orderDate;
     }
-    public void setDate(final Calendar date) {
-        this.date = date;
+    public void setDate(final Date orderDate) {
+        this.orderDate = orderDate;
     }
     
-
     public Customer getCustomer() {
         return this.customer;
     }
@@ -58,7 +57,6 @@ public class Order {
         this.customer = customer;
     }
     
-
     public Set<OrderLine> getOrderLines() {
         return this.orderLines;
     }
